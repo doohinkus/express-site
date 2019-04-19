@@ -1,0 +1,25 @@
+extends ../layout/index
+block content
+  //- #{console.log(name)}
+  #speakerDetail.container
+    .row
+      .col-sm-8
+        article.speakerslist
+          .container
+            .row
+              .col-sm-8
+                h3.speakerslist-title=speakertitle
+                h5.speakerslist-name
+                  | with 
+                  a(href=`${shortname}`)=name
+                p.speakerslist-info
+                  a(href=`${shortname}`)
+                  img.speakerslist-img.img-responsive.pull-left(src=`/images/speakers/${shortname}.jpg`, alt=`Photo of ${name}`)
+                  //- != unescapes html--dangerous for untrusted content.
+                !=description
+            // row
+          // container
+      // primary
+      aside.col-sm-4
+        article.sidebar
+          include ../layout/includes/artwork
